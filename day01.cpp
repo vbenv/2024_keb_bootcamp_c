@@ -1,16 +1,9 @@
-//별로 사각형 출력하는 프로그램
-
 #include <iostream>
-
 using namespace std;
 
 int main()
 {
-    cout << "******" << endl;
-    cout << "******" << endl;
-    cout << "******" << endl;
-    cout << "******" << endl;
-    cout << "******" << endl;
-    cout << "******";
+    const double PI = 3.14159;
+    cout << "상수 PI 출력값: " << PI;
     return 0;
 }
