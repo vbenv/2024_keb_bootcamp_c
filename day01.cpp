@@ -1,10 +1,16 @@
+//별로 사각형 출력하는 프로그램
+
 #include <iostream>
+
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello"<< std::endl;
-    std::cout << "10시까지 자습 퐈이팅" << std::endl;
+    cout << "******" << endl;
+    cout << "******" << endl;
+    cout << "******" << endl;
+    cout << "******" << endl;
+    cout << "******" << endl;
+    cout << "******";
     return 0;
 }
-
-
