@@ -1,18 +1,24 @@
-//if 조건문 사용해서 절대값 출력
+//switch 조건문
+//요일 출력
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    int number;
-
-    cout << "정수를 입력하세요: ";
-    cin >> number;
-
-    if(number<0)
+    // 변수 선언
+    int day;
+    //input
+    cout << "0~6 input int: ";
+    cin >> day;
+    // switch 
+    switch(day)
     {
-        number = -number;
-    }
-    cout << number;
+        case 0: cout << "sunday" << endl;
+        case 1: cout << "monday" << endl;
+        case 2: cout << "tuesday" << endl;
+        case 4: cout << "thursday" << endl;
+        case 5: cout << "friday" << endl;
+        case 6: cout << "saturday" << endl;
+    }// exit switch phrase
     return 0;
 }
