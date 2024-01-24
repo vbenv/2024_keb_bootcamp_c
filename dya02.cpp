@@ -1,12 +1,18 @@
+//if 조건문 사용해서 절대값 출력
 #include <iostream>
-#include <limits>
 using namespace std;
 
 int main()
 {
-    unsigned int num1 = numeric_limits<unsigned int>::max();
-    cout << num1 <<endl;
-    num1 += 1;
-    cout << num1;
+    int number;
+
+    cout << "정수를 입력하세요: ";
+    cin >> number;
+
+    if(number<0)
+    {
+        number = -number;
+    }
+    cout << number;
     return 0;
 }
