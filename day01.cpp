@@ -1,12 +1,17 @@
-// 정수 자료형의 크기 확인하기
-// 3가지 정수 자료형의 크기 확인하는 프로그램
+// 정수 리터럴로 변수 초기화하기
+// 변수 초기화 시 리터럴 사용하는 프로그램
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    cout << "short int의 크기는 " << sizeof(short int) << "바이트입니다." << endl;
-    cout << "int의 크기는 " << sizeof(int) << "바이트입니다." << endl;
-    cout << "long int의 크기는 " << sizeof(long int) << "바이트입니다." << endl;
+    int x = -1234;
+    unsigned int y = 1234;
+    unsigned int z = -236;
+    unsigned int t = 14.56;
+
+    cout << x <<endl;
+    cout << y << endl;
+    cout << z << endl;
     return 0;
 }
