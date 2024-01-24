@@ -1,24 +1,26 @@
-//switch 조건문
-//요일 출력
+// 숫자에서 정수 부분과 소수점 아래 부분을 분리해서 추출하는 프로그램
+// 주어진 부동 소수점의 정수 부분과 소수점 아래 부분을 추출해서 출력
+
 #include <iostream>
+#include <iomanip> //이게 뭐지
 using namespace std;
 
 int main()
 {
     // 변수 선언
-    int day;
-    //input
-    cout << "0~6 input int: ";
-    cin >> day;
-    // switch 
-    switch(day)
-    {
-        case 0: cout << "sunday" << endl;
-        case 1: cout << "monday" << endl;
-        case 2: cout << "tuesday" << endl;
-        case 4: cout << "thursday" << endl;
-        case 5: cout << "friday" << endl;
-        case 6: cout << "saturday" << endl;
-    }// exit switch phrase
+    double number;
+    int intPart;
+    double fractPart;
+    // 입력 받기
+    cout << "부동 소수점 입력: ";
+    cin >> number;
+    // 처리
+    intPart = static_cast<int>(number);
+    fractPart = number - intPart;
+    // output
+    cout << fixed << showpoint << setprecision(3); // 이 기능에 반올림 포함.
+    cout << "원래 값: " << number << endl;
+    cout << "정수 부분: " << intPart << endl;
+    cout << "소수점 아래 부분: " << fractPart << endl;
     return 0;
 }
