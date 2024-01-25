@@ -1,49 +1,36 @@
-// for
-// 한 달의 날짜 수와 첫 날의 요일을 입력받고
-// 달력 형태로 한 달을 출력하는 프로그램
+// 함수
+// 정다각형의 둘레와 넓이 구하기
+// 변의 개수와 길이를 입력받고
+// 정다각형의 둘레와 넓이를 구하는 프로그램
 
 #include <iostream>
-#include <iomanip>
+#include <cmath>
 using namespace std;
 
 int main()
 {
-    // 선언과 초기화
-    int startDay;
-    int daysInMonth;
-    int col =1;
-    // 한 달의 날짜 유효성 검사
+    // 변수 선언
+    const double PI = 3.141592653589793238452; //상수 선언 방식. const 자료형 변수명 = 할당할 내용
+    int n;
+    double s, peri, area;
+    // 변의 개수 입력받기
     do
     {
-        cout << "한 달의 날짜 수를 입력하세요(28, 29, 30, 31): ";
-        cin >> daysInMonth;
-    } while (daysInMonth < 28 || daysInMonth > 31);
-    // 요일 유효성 검사
+        cout << "변의 개수를 입력하세요(4 이상의 정수): ";
+        cin >> n;
+    } while (n < 4);
+    //변의 길이 입력받기
     do
     {
-        cout << "첫 날의 요일을 입력하세요(0~6): ";
-        cin >> startDay;
-    } while (startDay < 0 || startDay > 6);
-    // 제목 출력
-    cout << endl;
-    cout << "Sun Mon Tue Wed Thr Fri Sat" << endl;
-    cout << "--- --- --- --- --- --- ---" << endl;
-    // 달력의 앞쪽 여백 출력
-    for(int space = 0; space < startDay; space++)
-    {
-        cout << "   ";
-        col++;
-    }
-    // 달력 출력
-    for(int day = 1; day <= daysInMonth; day++)
-    {
-        cout << setw(3) << day << " ";
-        col++;
-            if(col >7)
-            {
-                cout << endl;
-                col = 1;
-            }
-    }
-    return 0;    
+        cout << "변의 길이 입력하세요: ";
+        cin >> s;
+    } while (s <= 0.0);
+    // 둘레와 넓이 구하기
+    peri = n * s;
+    area = (n * pow (s, 2)) / (n * tan (PI / n));
+    //결과 출력
+    cout << "둘레: " << peri << endl;
+    cout << "넓이: " << area << endl;
+    return 0;
+
 }
