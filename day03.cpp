@@ -1,25 +1,49 @@
-//반복문 사용해서 메시지 10회 출력
+// for
+// 한 달의 날짜 수와 첫 날의 요일을 입력받고
+// 달력 형태로 한 달을 출력하는 프로그램
 
 #include <iostream>
 #include <iomanip>
 using namespace std;
 
 int main()
-{   //선언 후 초기화.
-    int score;
-    int sum =0;
-    double average; // score를 더블로 바꿔야 소수점 아래가 나오기 때문에 double로 선언. if, int로 선언하면, 계산한 값을 average에 저장할 때 int로 바꿔 소수점 아래를 다 없애고 계산하게됨.
-    // while
-    int counter = 0;
-    while(counter<4) //4 반복
+{
+    // 선언과 초기화
+    int startDay;
+    int daysInMonth;
+    int col =1;
+    // 한 달의 날짜 유효성 검사
+    do
     {
-        cout<<"input your score: ";
-        cin >> score;
-        sum = sum + score;
-        counter++;
+        cout << "한 달의 날짜 수를 입력하세요(28, 29, 30, 31): ";
+        cin >> daysInMonth;
+    } while (daysInMonth < 28 || daysInMonth > 31);
+    // 요일 유효성 검사
+    do
+    {
+        cout << "첫 날의 요일을 입력하세요(0~6): ";
+        cin >> startDay;
+    } while (startDay < 0 || startDay > 6);
+    // 제목 출력
+    cout << endl;
+    cout << "Sun Mon Tue Wed Thr Fri Sat" << endl;
+    cout << "--- --- --- --- --- --- ---" << endl;
+    // 달력의 앞쪽 여백 출력
+    for(int space = 0; space < startDay; space++)
+    {
+        cout << "   ";
+        col++;
     }
-    average = static_cast <double>(sum) / 4;  //sum or 나누는 '4' 중 하나를 double(float) 타입으로 바꿔야 묵시적 형변환이 일어나 보다 정확한 수치를 알 수 있음.
-    cout << fixed << setprecision(2) << showpoint;
-    cout << "average score = " << average;
-    return 0;
+    // 달력 출력
+    for(int day = 1; day <= daysInMonth; day++)
+    {
+        cout << setw(3) << day << " ";
+        col++;
+            if(col >7)
+            {
+                cout << endl;
+                col = 1;
+            }
+    }
+    return 0;    
 }
