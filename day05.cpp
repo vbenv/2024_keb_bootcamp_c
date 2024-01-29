@@ -11,7 +11,7 @@ int main()
 	//사용자에게 크기 입력받고 유효성 검사
 	do
 	{
-		cout << "insert size: ";
+		cout << "insert size(1~10): ";
 		cin >> size;
 	} while (size < 1 || size > CAPACITY);
 	//정수 입력 받기
