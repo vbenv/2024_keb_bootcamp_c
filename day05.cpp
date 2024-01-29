@@ -4,17 +4,17 @@ using namespace std;
 int main()
 {
     //declare
-    int numberOfDays[13] = {0, 31, 28, 31, 30, 31, 30,
-                            31, 31, 30, 31, 30, 31}; 
-							//0을 띄워서 1~12월까지 입력받음.
-	int month;
+    int phoneNumber[4] = {1998, 2001, 3001, 5853}; 
+
+	int randomPick;
 	
-	do // 사용자에게 달을 입력받아야 하므로 do-while
+	do
 	{
-	    cout << "input month(1~12): ";
-		cin >> month;
-	} while (month < 1 || month > 12); // d
-	cout << "this month " << numberOfDays[month];
-	cout << "days";
+		cout << "Pick your number: ";
+		cin >> randomPick;
+	} while (randomPick < 1 || randomPick > 4);
+	// print
+	cout << "your phone number is " << phoneNumber[randomPick - 1];
+	cout << "."; 
 	return 0;
 }
